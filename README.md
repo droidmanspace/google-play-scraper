@@ -3,7 +3,7 @@ Google Play Scraper
 
 [![Build Status](https://travis-ci.org/raulr/google-play-scraper.svg?branch=master)](https://travis-ci.org/raulr/google-play-scraper)
 
-A PHP scraper to get app data from Google Play.
+A PHP scraper to get app data from Google Play latest version.
 
 Installation
 ------------
@@ -16,13 +16,19 @@ $ composer require droidmanspace/google-play-scraper
 
 Usage
 -----
+Add require_once __DIR__ . '/vendor/autoload.php';
 
 First create a `Scraper` instance.
 
 ```php
+require_once __DIR__ . '/vendor/autoload.php';
 use Raulr\GooglePlayScraper\Scraper;
-
 $scraper = new Scraper();
+then use methods to the $scraper object .
+
+Eg: $app = $scraper->getApp('com.mojang.minecraftpe');
+var_dump($app); // display the response 
+
 ```
 
 There are several methods to configure the default behavior:
@@ -42,10 +48,6 @@ Gets app information given its ID.
 * `$country`: (optional, defaults to `null`): Overrides the default country.
 
 #### Example
-
-```php
-$app = $scraper->getApp('com.mojang.minecraftpe');
-```
 
 Returns:
 
