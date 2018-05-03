@@ -1,5 +1,5 @@
 {
-    "name": "raulr/google-play-scraper",
+    "name": "droidmanspace/google-play-scraper",
     "type": "library",
     "description": "A PHP scraper to get app data from Google Play",
     "keywords": ["google play", "scraper"],
@@ -11,7 +11,8 @@
     "authors": [
         {
             "name": "Raul Rodriguez",
-            "email": "raul@raulr.net"
+            "email": "raul@raulr.net",
+            "name":"droidmanspace"
         }
     ],
     "autoload": {
