@@ -1,7 +1,7 @@
 {
     "name": "droidmanspace/google-play-scraper",
     "type": "library",
-    "description": "A PHP scraper to get app data from Google Play",
+    "description": "A PHP scraper to get app data from Google Play Latest Version 2018",
     "keywords": ["google play", "scraper"],
     "homepage": "https://github.com/raulr/google-play-scraper",
     "license": "MIT",
