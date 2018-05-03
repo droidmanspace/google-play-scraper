@@ -122,8 +122,8 @@ class Scraper
         $info['categories'] = $crawler->filter('[itemprop="genre"]')->each(function ($node) {
             return $node->text();
         });
-        $price = $crawler->filter('[itemprop="offers"] > [itemprop="price"]')->attr('content');
-       $info['price'] = $price == '0' ? null : $price;
+       // $price = $crawler->filter('[itemprop="offers"] > [itemprop="price"]')->attr('content');
+     //  $info['price'] = $price == '0' ? null : $price;
         $desc = $this->cleanDescription($crawler->filter('[itemprop="description"]>content>div'));
          $info['description'] = $desc['text']; 
         $info['description_html'] =  $desc['html'];     
@@ -180,9 +180,17 @@ class Scraper
         }
     $videoNode = $crawler->filter('[jsname="WR0adb"]');
         if ($videoNode->count()) {
-            $youtubeUrl = substr($videoNode->filter('[jsname="pWHZ7d"]')->attr('data-trailer-url'), 0, strpos($videoNode->filter('[jsname="pWHZ7d"]')->attr('data-trailer-url'), "?"));
+
+                 $videoNode->each(function($node){
+    if ($node->children()->last()->attr('data-trailer-url')!== null) {
+        $youtubeUrl = substr($videoNode->filter('[jsname="pWHZ7d"]')->attr('data-trailer-url'), 0, strpos($videoNode->filter('[jsname="pWHZ7d"]')->attr('data-trailer-url'), "?"));
              $info['video_link'] ='https://www.youtube.com/watch?v='.pathinfo( $youtubeUrl , PATHINFO_BASENAME); 
-            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('img')->attr('src'));
+            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('img')->attr('src')); 
+    }else{
+        $info['video_link'] = null;
+            $info['video_image'] = null;
+    }
+});
         } else {
             $info['video_link'] = null;
             $info['video_image'] = null;
