@@ -8,10 +8,10 @@ A PHP scraper to get app data from Google Play.
 Installation
 ------------
 
-Add `raulr/google-play-scraper` as a require dependency in your `composer.json` file:
+Add `droidmanspace/google-play-scraper` as a require dependency in your `composer.json` file:
 
 ```sh
-$ composer require raulr/google-play-scraper
+$ composer require droidmanspace/google-play-scraper
 ```
 
 Usage
@@ -76,7 +76,6 @@ array (
   'downloads' => '10,000,000 - 50,000,000',
   'version' => 'Varies with device',
   'supported_os' => 'Varies with device',
-  'content_rating' => 'Everyone 10+',
   'whatsnew' => 'Build, explore and survive on the go with Minecraft: Pocket Edition[...]',
   'video_link' => 'https://www.youtube.com/embed/D2Z9oKTzzrM?ps=play&vq=large&rel=0&autohide=1&showinfo=0&autoplay=1',
   'video_image' => 'https://i.ytimg.com/vi/D2Z9oKTzzrM/hqdefault.jpg',
