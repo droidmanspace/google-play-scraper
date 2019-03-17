@@ -115,7 +115,8 @@ class Scraper
         $info['title'] = $crawler->filter('[itemprop="name"] > span')->text();
        $info['author'] = $crawler->filter('[class="hrTbp R8zArc"]')->text();
         $info['screenshots'] = $crawler->filter('[jscontroller="jt8Aqb"]')->each(function ($node) {       
-            return  substr($node->filter('img')->attr('src'), 0, strpos($node->filter('img')->attr('src'), "="));
+            //return  substr($node->filter('img')->attr('src'), 0, strpos($node->filter('img')->attr('src'), "="));
+             return  $node->filter('img')->attr('data-src');
         });
         $info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[class="hrTbp R8zArc"]')->attr('href'));
         
