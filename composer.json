@@ -10,9 +10,14 @@
     },
     "authors": [
         {
+            "name": "Droid Man",
+            "email": "droidmanspace@gmail.com",
+            "name":"Droid"
+        },
+        {
             "name": "Raul Rodriguez",
             "email": "raul@raulr.net",
-            "name":"droidmanspace"
+            "name":"Raul"
         }
     ],
     "autoload": {
